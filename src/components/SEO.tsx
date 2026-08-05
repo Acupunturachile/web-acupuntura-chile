@@ -19,8 +19,8 @@ interface SEOProps {
 
 export default function SEO({
   title = 'Acupuntura Chile | Clínica de Acupuntura y Medicina China Tradicional',
-  description = 'Clínica líder de Acupuntura y Medicina Tradicional China en Chile. Tratamientos para dolor crónico, estrés, ansiedad, fertilidad y migraña en Providencia (Santiago), La Serena, Talca y Viña del Mar.',
-  keywords = 'Acupuntura Chile, Acupuntura Providencia, Acupuntura Santiago, Medicina China Chile, Tratamiento Dolor Crónico, Acupuntura Estrés Ansiedad, Acupuntura Fertilidad, Acupuntura La Serena, Acupuntura Talca, Acupuntura Viña del Mar',
+  description = 'Clínica líder de Acupuntura y Medicina Tradicional China en Chile. Tratamientos para dolor crónico, estrés, ansiedad, fertilidad y migraña en Providencia (Santiago), La Serena, Talca, Viña del Mar y Curicó.',
+  keywords = 'Acupuntura Chile, Acupuntura Providencia, Acupuntura Santiago, Medicina China Chile, Tratamiento Dolor Crónico, Acupuntura Estrés Ansiedad, Acupuntura Fertilidad, Acupuntura La Serena, Acupuntura Talca, Acupuntura Viña del Mar, Acupuntura Curicó',
   canonical = 'https://acupuntura-chile.cl',
   ogImage = 'https://acupuntura-chile.cl/og-image.jpg',
   ogType = 'website',
@@ -121,6 +121,18 @@ export default function SEO({
           'streetAddress': '10 Norte 875',
           'addressLocality': 'Viña del Mar',
           'addressRegion': 'Valparaíso',
+          'addressCountry': 'CL'
+        },
+        'telephone': '+56930395842'
+      },
+      {
+        '@type': 'MedicalClinic',
+        'name': 'Acupuntura Chile - Sede Curicó',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Peña 301 (esq. Villota)',
+          'addressLocality': 'Curicó',
+          'addressRegion': 'Maule',
           'addressCountry': 'CL'
         },
         'telephone': '+56930395842'

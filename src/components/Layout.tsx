@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className="bg-brand-navy text-white/90 text-xs py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <span className="flex items-center"><MapPin className="w-3 h-3 mr-1" /> Providencia • La Serena • Talca • Viña del Mar</span>
+            <span className="flex items-center"><MapPin className="w-3 h-3 mr-1" /> Providencia • La Serena • Talca • Viña del Mar • Curicó</span>
             <span className="flex items-center"><Clock className="w-3 h-3 mr-1" /> Lun-Vie 9:00-20:00 / Sáb 9:00-14:00</span>
           </div>
           <div className="flex items-center space-x-4">
@@ -150,6 +150,10 @@ export default function Layout({ children }: { children: ReactNode }) {
               <li className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-1 shrink-0 text-brand-gold" />
                 <span><strong>Viña del Mar:</strong><br/>10 Norte 875</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="w-4 h-4 mr-2 mt-1 shrink-0 text-brand-gold" />
+                <span><strong>Curicó:</strong><br/>Peña 301 (esq. Villota)</span>
               </li>
               <li className="flex items-center pt-2 border-t border-white/10">
                 <Clock className="w-4 h-4 mr-2 text-brand-gold" />

@@ -8,9 +8,9 @@ export default function Tratamientos() {
     <div className="w-full py-16 md:py-24 px-4 md:px-6 bg-white min-h-screen">
       <SEO 
         title="Tratamientos de Acupuntura y Medicina Tradicional China | Acupuntura Chile"
-        description="Conoce nuestros tratamientos clínicos: Acupuntura, Moxibustión, Ventosas (Cupping), Auriculoterapia, Masaje Tuina, Quiropraxia y Electroacupuntura en Providencia, Santiago, La Serena, Talca y Viña del Mar."
+        description="Conoce nuestros tratamientos clínicos: Acupuntura, Moxibustión, Ventosas (Cupping), Auriculoterapia, Masaje Tuina, Quiropraxia y Electroacupuntura en Providencia, Santiago, La Serena, Talca, Viña del Mar y Curicó."
         canonical="https://acupuntura-chile.cl/tratamientos"
-        keywords="Tratamientos Acupuntura Chile, Moxibustión Chile, Ventosas Cupping, Auriculoterapia Santiago, Masaje Tuina, Quiropraxia Providencia, Electroacupuntura"
+        keywords="Tratamientos Acupuntura Chile, Moxibustión Chile, Ventosas Cupping, Auriculoterapia Santiago, Masaje Tuina, Quiropraxia Providencia, Electroacupuntura, Acupuntura Curicó"
       />
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">

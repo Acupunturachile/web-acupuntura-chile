@@ -54,7 +54,7 @@ export default function Home() {
     <div className="w-full">
       <SEO 
         title="Acupuntura Chile | Centro Clínico de Acupuntura y Medicina Tradicional China"
-        description="Acupuntura Chile: Especialistas en manejo de dolor crónico, estrés, fertilidad y salud integrativa con equipo clínico certificado. Sedes en Providencia (Santiago), La Serena, Talca y Viña del Mar."
+        description="Acupuntura Chile: Especialistas en manejo de dolor crónico, estrés, fertilidad y salud integrativa con equipo clínico certificado. Sedes en Providencia (Santiago), La Serena, Talca, Viña del Mar y Curicó."
         canonical="https://acupuntura-chile.cl/"
         faqSchema={faqs.map(f => ({ question: f.q, answer: f.a }))}
       />

@@ -21,10 +21,10 @@ export default function Booking() {
   return (
     <div className="w-full bg-brand-cream min-h-screen py-16 md:py-24 px-4 md:px-6">
       <SEO 
-        title="Reserva tu Evaluación | Acupuntura Chile - Providencia, La Serena, Talca, Viña del Mar"
+        title="Reserva tu Evaluación | Acupuntura Chile - Providencia, La Serena, Talca, Viña del Mar, Curicó"
         description="Agendar hora para evaluación de acupuntura y medicina tradicional china. Atención personalizada por profesionales kinesiólogos y acupunturistas certificados."
         canonical="https://acupuntura-chile.cl/reserva-hora"
-        keywords="Reserva Hora Acupuntura Chile, Agendar Acupuntura Providencia Santiago, Evaluación Acupuntura La Serena Talca Viña del Mar"
+        keywords="Reserva Hora Acupuntura Chile, Agendar Acupuntura Providencia Santiago, Evaluación Acupuntura La Serena Talca Viña del Mar Curicó"
       />
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -64,6 +64,10 @@ export default function Booking() {
                      <div>
                        <strong className="block mb-1 font-medium text-brand-gold">Viña del Mar</strong>
                        10 Norte 875
+                     </div>
+                     <div>
+                       <strong className="block mb-1 font-medium text-brand-gold">Curicó</strong>
+                       Peña 301 (esq. Villota)
                      </div>
                    </div>
                  </li>
