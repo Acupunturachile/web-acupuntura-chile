@@ -1,12 +1,12 @@
 {
-  "projectId": "gen-lang-client-0921691490",
-  "appId": "1:620650158496:web:0ce2b333da51e0faacacc5",
-  "apiKey": "AIzaSyBWcGrITg3ZX-UlrGp-OfCd-BILVLXFrxs",
-  "authDomain": "gen-lang-client-0921691490.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-webacupunturachi-048ac020-2fed-46c9-82bd-c763069a55eb",
-  "storageBucket": "gen-lang-client-0921691490.firebasestorage.app",
-  "messagingSenderId": "620650158496",
-  "measurementId": "",
-  "oAuthClientId": "620650158496-6q79gn13l2ohe9te8lpvknkrc4hbn9ih.apps.googleusercontent.com",
+  "projectId": "web-acupuntura",
+  "appId": "1:1061695640470:web:56c3505fa253d585d783b7",
+  "apiKey": "AIzaSyBZb_ipCufsLdTj18GHnMoF0i1_Eci3h30",
+  "authDomain": "web-acupuntura.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "web-acupuntura.firebasestorage.app",
+  "messagingSenderId": "1061695640470",
+  "measurementId": "G-VMQJR0WV2M",
+  "oAuthClientId": "",
   "recaptchaSiteKey": ""
 }

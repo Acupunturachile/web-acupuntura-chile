@@ -1,8 +1,5 @@
 {
-  "firestore": [
-    {
-      "database": "ai-studio-webacupunturachi-048ac020-2fed-46c9-82bd-c763069a55eb",
-      "rules": "firestore.rules"
-    }
-  ]
+  "firestore": {
+    "rules": "firestore.rules"
+  }
 }
