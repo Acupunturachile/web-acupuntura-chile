@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAllowedAdmin() {
+      return request.auth != null && 
+        request.auth.token.email != null && 
+        (request.auth.token.email.lower() == 'contacto@acupuntura-chile.cl' || 
+         request.auth.token.email.lower() == 'm.painecura.g@gmail.com');
+    }
+
+    match /blogPosts/{postId} {
+      allow read: if true;
+      allow create, update, delete: if isAllowedAdmin();
+    }
+  }
+}

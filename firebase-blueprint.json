@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "blogPosts": {
+      "title": "Blog Posts",
+      "description": "Noticias y artículos del blog de Acupuntura Chile",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "excerpt", "content"]
+    }
+  }
+}

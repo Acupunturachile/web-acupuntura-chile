@@ -1,0 +1,8 @@
+{
+  "name": "Web Acupuntura Chile",
+  "description": "Sitio web de Acupuntura Chile con gestión de blog en tiempo real mediante Firebase y autenticación Google para administradores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

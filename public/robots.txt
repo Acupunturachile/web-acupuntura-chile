@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Allow AI Answer Engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://acupuntura-chile.cl/sitemap.xml
