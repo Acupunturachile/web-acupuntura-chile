@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { auth, db, googleProvider, isFirebaseConfigured } from '../lib/firebase';
+import { auth, db, googleProvider, isFirebaseConfigured, storage } from '../lib/firebase';
 import { signInWithPopup, signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { collection, query, orderBy, onSnapshot, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { Trash2, Edit2, Plus, LogOut, AlertCircle, ShieldAlert, CheckCircle2, Image as ImageIcon, Sparkles, Search, Bold, Italic, Heading2, List, Quote, Link as LinkIcon, Eye, FileText, HelpCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
@@ -27,6 +28,48 @@ export default function Admin() {
   const [imageUrl, setImageUrl] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [contentMode, setContentMode] = useState<'edit' | 'preview'>('edit');
+
+  // Image Upload states
+  const [uploadProgress, setUploadProgress] = useState<number | null>(null);
+  const [imageSourceMode, setImageSourceMode] = useState<'url' | 'upload'>('upload');
+
+  const handleImageFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      showStatus('error', 'La imagen supera el límite de 5MB.');
+      return;
+    }
+
+    const storageRef = ref(storage, `blog_images/${Date.now()}_${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setUploadProgress(progress);
+      },
+      (error) => {
+        console.error('Error uploading file:', error);
+        showStatus('error', 'Error al subir la imagen a Firebase.');
+        setUploadProgress(null);
+      },
+      async () => {
+        try {
+          const downloadUrl = await getDownloadURL(uploadTask.snapshot.ref);
+          setImageUrl(downloadUrl);
+          showStatus('success', 'Imagen subida correctamente.');
+        } catch (error) {
+          console.error('Error getting download URL:', error);
+          showStatus('error', 'Error al obtener la dirección de la imagen.');
+        } finally {
+          setUploadProgress(null);
+        }
+      }
+    );
+  };
 
   useEffect(() => {
     if (!isFirebaseConfigured) {
@@ -393,19 +436,84 @@ export default function Admin() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1">
-                  Imagen de Portada (URL opcional)
+                <label className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-2">
+                  Imagen de Portada
                 </label>
-                <div className="relative">
-                  <input 
-                    type="url" 
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
-                    placeholder="https://images.unsplash.com/..."
-                    className="w-full border border-gray-200 rounded-xl p-3 pl-10 focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold outline-none text-sm transition-all"
-                  />
-                  <ImageIcon className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+                <div className="flex border-b border-gray-100 mb-4 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setImageSourceMode('upload')}
+                    className={`pb-2 px-3 text-xs font-semibold uppercase tracking-wider transition-colors ${
+                      imageSourceMode === 'upload'
+                        ? 'border-b-2 border-brand-gold text-brand-navy font-bold'
+                        : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    Subir desde PC
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setImageSourceMode('url')}
+                    className={`pb-2 px-3 text-xs font-semibold uppercase tracking-wider transition-colors ${
+                      imageSourceMode === 'url'
+                        ? 'border-b-2 border-brand-gold text-brand-navy font-bold'
+                        : 'text-gray-400 hover:text-gray-600'
+                    }`}
+                  >
+                    Pegar URL externa
+                  </button>
                 </div>
+
+                {imageSourceMode === 'upload' ? (
+                  <div className="border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center hover:border-brand-gold transition-colors relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageFileChange}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      disabled={uploadProgress !== null}
+                    />
+                    <div className="flex flex-col items-center gap-2">
+                      <Plus className="w-8 h-8 text-gray-400" />
+                      <span className="text-sm font-medium text-gray-600">
+                        {uploadProgress !== null ? `Subiendo: ${uploadProgress}%` : 'Arrastra o haz clic para subir una imagen'}
+                      </span>
+                      <span className="text-xs text-gray-400">Formatos: PNG, JPG, WEBP (Máx: 5MB)</span>
+                    </div>
+                    {uploadProgress !== null && (
+                      <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gray-100 rounded-b-2xl overflow-hidden">
+                        <div
+                          className="h-full bg-brand-gold transition-all duration-300"
+                          style={{ width: `${uploadProgress}%` }}
+                        ></div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="relative">
+                    <input
+                      type="url"
+                      value={imageUrl}
+                      onChange={(e) => setImageUrl(e.target.value)}
+                      placeholder="https://images.unsplash.com/..."
+                      className="w-full border border-gray-200 rounded-xl p-3 pl-10 focus:ring-2 focus:ring-brand-gold/20 focus:border-brand-gold outline-none text-sm transition-all"
+                    />
+                    <ImageIcon className="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5" />
+                  </div>
+                )}
+
+                {imageUrl && (
+                  <div className="mt-3 relative rounded-xl overflow-hidden border border-gray-200 h-28 max-w-sm group">
+                    <img src={imageUrl} alt="Vista previa de portada" className="w-full h-full object-cover" />
+                    <button
+                      type="button"
+                      onClick={() => setImageUrl('')}
+                      className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div>
