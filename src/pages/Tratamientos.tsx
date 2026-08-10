@@ -43,9 +43,9 @@ export default function Tratamientos() {
            <div className="relative z-10">
               <h2 className="text-3xl font-serif mb-6">¿No sabes qué terapia necesitas?</h2>
               <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg font-light">Todas nuestras atenciones comienzan con una evaluación inicial. Allí determinaremos el plan de tratamiento adecuado para tu condición.</p>
-              <Link to="/reserva-hora" className="inline-flex items-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors text-lg shadow-lg">
-                Agenda tu evaluación <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+              <a href="https://acupunturachile.site.agendapro.com/cl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors text-lg shadow-lg">
+                Agenda tu sesión <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
            </div>
         </div>
       </div>

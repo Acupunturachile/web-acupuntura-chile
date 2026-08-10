@@ -67,12 +67,14 @@ export default function Layout({ children }: { children: ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/reserva-hora"
+            <a
+              href="https://acupunturachile.site.agendapro.com/cl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand-gold hover:bg-brand-gold-hover text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-sm"
             >
-              Agenda tu evaluación
-            </Link>
+              Agenda tu sesión
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -96,12 +98,14 @@ export default function Layout({ children }: { children: ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/reserva-hora"
+            <a
+              href="https://acupunturachile.site.agendapro.com/cl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block flex justify-center bg-brand-gold text-white px-6 py-3 rounded-full font-medium mt-4 text-center"
             >
-              Agenda tu evaluación
-            </Link>
+              Agenda tu sesión
+            </a>
           </nav>
         )}
       </header>
@@ -179,9 +183,14 @@ export default function Layout({ children }: { children: ReactNode }) {
               </li>
             </ul>
             <div className="mt-8">
-              <Link to="/reserva-hora" className="inline-block bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-6 py-2 rounded-full font-medium transition-colors text-sm">
+              <a 
+                href="https://acupunturachile.site.agendapro.com/cl" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white px-6 py-2 rounded-full font-medium transition-colors text-sm"
+              >
                 Reserva tu hora
-              </Link>
+              </a>
             </div>
           </div>
         </div>

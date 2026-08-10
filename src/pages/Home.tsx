@@ -91,10 +91,10 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
-            <Link to="/reserva-hora" className="w-full sm:w-auto bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors shadow-lg text-lg text-center flex items-center justify-center">
-              Agenda tu evaluación
+            <a href="https://acupunturachile.site.agendapro.com/cl" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors shadow-lg text-lg text-center flex items-center justify-center">
+              Agenda tu sesión
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
+            </a>
             <a href="https://wa.me/56930395842" className="w-full sm:w-auto bg-transparent border-2 border-white/20 hover:border-white text-white px-8 py-4 rounded-full font-medium transition-colors text-lg text-center flex items-center justify-center">
               <MessageCircle className="mr-2 w-5 h-5" />
               Habla por WhatsApp

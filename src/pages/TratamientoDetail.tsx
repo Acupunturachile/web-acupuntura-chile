@@ -88,9 +88,9 @@ export default function TratamientoDetail() {
           </div>
           
           <div className="mt-12 text-center pt-10 border-t border-brand-cream-dark">
-             <Link to="/reserva-hora" className="inline-flex items-center text-center justify-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors text-lg shadow-lg w-full md:w-auto">
-                Agenda tu evaluación
-             </Link>
+              <a href="https://acupunturachile.site.agendapro.com/cl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-center justify-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-4 rounded-full font-medium transition-colors text-lg shadow-lg w-full md:w-auto">
+                 Agenda tu sesión
+              </a>
              <p className="text-sm text-gray-500 mt-4">Nuestra evaluación inicial es sin compromiso.</p>
           </div>
         </div>

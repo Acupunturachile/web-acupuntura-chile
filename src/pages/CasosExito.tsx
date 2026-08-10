@@ -52,9 +52,9 @@ export default function CasosExito() {
                     </div>
                  </div>
                  
-                 <Link to="/reserva-hora" className="inline-flex items-center justify-center text-center bg-brand-cream hover:bg-brand-gold text-brand-navy hover:text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors">
+                 <a href="https://acupunturachile.site.agendapro.com/cl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center text-center bg-brand-cream hover:bg-brand-gold text-brand-navy hover:text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors">
                    Reservar para mi caso
-                 </Link>
+                 </a>
                </div>
             </div>
           ))}

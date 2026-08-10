@@ -101,9 +101,9 @@ export default function Blog() {
 
         <div className="mt-20 text-center">
            <h2 className="text-2xl font-serif text-brand-navy mb-4">¿Quieres saber si alguna técnica te puede ayudar?</h2>
-           <Link to="/reserva-hora" className="inline-flex items-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-3 rounded-full font-medium transition-colors">
-              Agenda tu evaluación <ChevronRight className="w-4 h-4 ml-1" />
-           </Link>
+           <a href="https://acupunturachile.site.agendapro.com/cl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-3 rounded-full font-medium transition-colors">
+              Agenda tu sesión <ChevronRight className="w-4 h-4 ml-1" />
+           </a>
         </div>
       </div>
     </div>
