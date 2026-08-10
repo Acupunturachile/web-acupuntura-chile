@@ -81,17 +81,6 @@ export const treatments: Treatment[] = [
     image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop'
   },
   {
-    id: 'terapia-neural',
-    title: 'Terapia Neural',
-    shortDesc: 'Técnica sobre el sistema nervioso autónomo para favorecer el equilibrio del organismo.',
-    description: 'Técnica terapéutica orientada a trabajar sobre el sistema nervioso autónomo para favorecer la relajación y el equilibrio del organismo.',
-    usedFor: 'Apoyo complementario en manejo de estrés y tensión asociada a distintas condiciones físicas y emocionales.',
-    sessionDesc: '',
-    benefits: [],
-    faqs: [],
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop'
-  },
-  {
     id: 'masoterapia',
     title: 'Masoterapia',
     shortDesc: 'Técnicas manuales para reducir tensión muscular y promover la relajación.',

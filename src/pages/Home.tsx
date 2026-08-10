@@ -79,7 +79,7 @@ export default function Home() {
             <span className="w-2 h-2 rounded-full bg-brand-gold relative">
                <span className="absolute inset-0 rounded-full bg-brand-gold animate-ping opacity-75"></span>
             </span>
-            <span>Clínica de Acupuntura y Medicina China en Santiago</span>
+            <span>Clínica de Acupuntura y Medicina China en Chile</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white font-medium tracking-tight mb-6 leading-tight">
@@ -376,6 +376,10 @@ export default function Home() {
                  <div>
                    <div className="font-medium text-sm text-gray-800">Viña del Mar</div>
                    <div className="text-xs text-gray-600">10 Norte 875</div>
+                 </div>
+                 <div>
+                   <div className="font-medium text-sm text-gray-800">Curicó</div>
+                   <div className="text-xs text-gray-600">Peña 301 (esq. Villota)</div>
                  </div>
                </div>
              </div>
